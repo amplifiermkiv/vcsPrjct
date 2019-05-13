@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/tripsManagementProject.iml" filepath="$PROJECT_DIR$/tripsManagementProject.iml" />
+      <module fileurl="file://C://git/../../Git/vcsPrjct/tripsManagementProject.iml" filepath="C://git/../../Git/vcsPrjct/tripsManagementProject.iml" />
     </modules>
   </component>
 </project>
