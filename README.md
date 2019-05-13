@@ -1,1 +1,1 @@
-# vcsPrjct
+vcsPrjct
