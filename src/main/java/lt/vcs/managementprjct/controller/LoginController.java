@@ -35,7 +35,7 @@ public class LoginController {
     }
 
     @FXML
-    private void login(ActionEvent event)  {
+    private void login(ActionEvent event) {
         try {
             connect();
             String sql = "SELECT managerID, password FROM Manager WHERE managerID='" + loginIssue.getText() + "'AND password='" + passIssue.getText() + "'";
@@ -60,13 +60,13 @@ public class LoginController {
     }
 
     @FXML
-    private void clearFields(ActionEvent event){
+    private void clearFields(ActionEvent event) {
         loginIssue.setText("");
         passIssue.setText("");
     }
 
-    private void userChoser(){
-        if(loginIssue.equals("admin")){
+    private void userChoser() {
+        if (loginIssue.equals("admin")) {
             //TODO
             // login.admin()
         } else {

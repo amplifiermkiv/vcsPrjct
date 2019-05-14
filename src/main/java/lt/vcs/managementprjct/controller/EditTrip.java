@@ -13,7 +13,7 @@ import lt.vcs.managementprjct.model.AlertBox;
 import java.io.IOException;
 import java.sql.*;
 
-public class AddNew {
+public class EditTrip {
 
     @FXML
     private TextField tripIDField;
@@ -47,7 +47,7 @@ public class AddNew {
     public void display() throws IOException {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent newParent = FXMLLoader.load(getClass().getResource("/newTrip.fxml"));
+        Parent newParent = FXMLLoader.load(getClass().getResource("/editTrip.fxml"));
         Scene newScene = new Scene(newParent);
         window.setScene(newScene);
         window.show();
@@ -65,10 +65,10 @@ public class AddNew {
     @FXML
     private void upload() throws SQLException {
         connect();
-        String sql = "INSERT INTO Trip(tripID, customerID, managerID, company, " +
-                "loadingPlace, offloadingPlace, loadingDate," +
-                "offloadingDate, customerPrice, carrierPrice," +
-                "driverContacts) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "UPDATE Trip SET customerID = ?, managerID = ?, company = ?, " +
+                "loadingPlace = ?, offloadingPlace = ?, loadingDate = ?," +
+                "offloadingDate = ?, customerPrice = ?, carrierPrice = ?," +
+                "driverContacts = ? WHERE tripID = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             Integer tripID = Integer.parseInt(tripIDField.getText());
             Integer customerID = Integer.parseInt(customerIDField.getText());
@@ -82,17 +82,17 @@ public class AddNew {
             Double carrierPrice = Double.parseDouble(carrierPriceField.getText());
             String driverContacts = driverContactsField.getText();
 
-            pstmt.setInt(1, tripID);
-            pstmt.setInt(2, customerID);
-            pstmt.setInt(3, managerID);
-            pstmt.setString(4, company);
-            pstmt.setString(5, loadingPlace);
-            pstmt.setString(6, offloadingPlace);
-            pstmt.setString(7, loadingDate);
-            pstmt.setString(8, offloadingDate);
-            pstmt.setDouble(9, customerPrice);
-            pstmt.setDouble(10, carrierPrice);
-            pstmt.setString(11, driverContacts);
+            pstmt.setInt(1, customerID);
+            pstmt.setInt(2, managerID);
+            pstmt.setString(3, company);
+            pstmt.setString(4, loadingPlace);
+            pstmt.setString(5, offloadingPlace);
+            pstmt.setString(6, loadingDate);
+            pstmt.setString(7, offloadingDate);
+            pstmt.setDouble(8, customerPrice);
+            pstmt.setDouble(9, carrierPrice);
+            pstmt.setString(10, driverContacts);
+            pstmt.setInt(11, tripID);
             pstmt.executeUpdate();
             AlertBox alertBox = new AlertBox();
             alertBox.display("SQL message", "Data base updated successfully");
@@ -109,5 +109,5 @@ public class AddNew {
         conn.close();
     }
 
-
 }
+

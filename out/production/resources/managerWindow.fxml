@@ -14,7 +14,7 @@
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <buttons>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name Surname" textAlignment="RIGHT" />
+            <Text fx:id="userNameLabel" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" />
             <Button mnemonicParsing="false" onAction="#logout" text="Logout" />
          </buttons>
          <BorderPane.margin>
@@ -32,7 +32,7 @@
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="tripsTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <columns>
                               <TableColumn fx:id="tripIdCol" minWidth="100.0" prefWidth="-1.0" resizable="false" text="ID" />
                               <TableColumn fx:id="customerIdCol" minWidth="110.0" prefWidth="-1.0" text="CustomerID" />
@@ -52,8 +52,8 @@
                         <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <buttons>
                               <Button layoutX="1195.0" layoutY="18.0" mnemonicParsing="false" onAction="#addNewTrip" text="+New Order" />
-                            <Button mnemonicParsing="false" text="edit" />
-                              <Button fx:id="removeTripBtn" layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" text="remove" />
+                            <Button mnemonicParsing="false" onAction="#editTrip" text="edit" />
+                              <Button fx:id="removeTripBtn" layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#removeTrip" text="remove" />
                               <Button fx:id="removeTripBtn1" layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#refresh" text="refresh" />
                           </buttons>
                            <BorderPane.margin>
@@ -71,7 +71,7 @@
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="customersTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <columns>
                               <TableColumn prefWidth="56.0" text="ID" />
                               <TableColumn prefWidth="81.0" text="Company" />
@@ -99,7 +99,7 @@
                   </BorderPane>
                </content>
             </Tab>
-            <Tab text="Carriers">
+            <Tab fx:id="carriersTableView" text="Carriers">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>

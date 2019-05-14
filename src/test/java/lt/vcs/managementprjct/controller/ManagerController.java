@@ -200,6 +200,15 @@ public class ManagerController extends UserController implements Initializable {
         tableView.setItems(data);
     }
 
+    public void refresh(ActionEvent event) {
+    }
+
+    public void remove(ActionEvent event) {
+    }
+
+    public void removeTrip(ActionEvent event) {
+    }
+
 /*    @FXML
     private void update(int ID, ActionEvent event) {
 
