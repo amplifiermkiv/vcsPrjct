@@ -13,9 +13,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import lt.vcs.managementprjct.services.ConnectionClass;
 
-public abstract class UserControllerTest implements Initializable {
+public abstract class UserController implements Initializable {
 
     protected Connection conn = null;
     protected PreparedStatement pst = null;
@@ -27,11 +26,7 @@ public abstract class UserControllerTest implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ConnectionClass connectionClass = new ConnectionClass();
-        try {
-            conn = connectionClass.connect1();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        conn = connectionClass.connect();
     }
 
     @FXML

@@ -8,12 +8,13 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.AlertBox;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 import java.io.IOException;
 import java.sql.*;
 
 public class RemoveTrip {
-
+    TripManagementDBConnection connection = new TripManagementDBConnection();
     private Connection conn = null;
     private Statement st = null;
     private PreparedStatement pst = null;
@@ -32,14 +33,9 @@ public class RemoveTrip {
         window.show();
     }
 
-    private void connect() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-        st = conn.createStatement();
-    }
-
     @FXML
-    public void removeConfirmation() throws SQLException {
-        connect();
+    public void removeConfirmation() {
+        conn = connection.connect();
         Integer tripID = Integer.parseInt(removeTripField.getText());
         String sql = "DELETE FROM Trip WHERE tripID = " + tripID;
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {

@@ -3,7 +3,6 @@ package lt.vcs.managementprjct.controller;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
@@ -12,14 +11,17 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.AlertBox;
 import lt.vcs.managementprjct.model.Trip;
-import lt.vcs.managementprjct.services.ConnectionClass;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
 
 public class EditTrip {
+    private Connection conn;
+    private Statement st;
+    private PreparedStatement pst;
+    private ResultSet rs;
+    TripManagementDBConnection connection = new TripManagementDBConnection();
     private ObservableList<Trip> data;
 
     @FXML
@@ -45,11 +47,6 @@ public class EditTrip {
     @FXML
     private TextArea driverContactsField;
 
-    private Connection conn;
-    private Statement st;
-    private PreparedStatement pst;
-    private ResultSet rs;
-
     @FXML
     public void display() throws IOException {
         Stage window = new Stage();
@@ -60,14 +57,10 @@ public class EditTrip {
         window.show();
     }
 
-    private void connect() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-        st = conn.createStatement();
-    }
-
     @FXML
     private void loadCurrentInfo() throws SQLException {
-        connect();
+        conn = connection.connect();
+        st = conn.createStatement();
         try {
             PreparedStatement pst = conn.prepareStatement("SELECT * FROM Trip WHERE tripID = " + tripIDField.getText());
             ResultSet rs = pst.executeQuery();
@@ -93,7 +86,8 @@ public class EditTrip {
 
     @FXML
     private void upload() throws SQLException {
-        connect();
+        conn = connection.connect();
+        st = conn.createStatement();
         String sql = "UPDATE Trip SET customerID = ?, managerID = ?, company = ?, " +
                 "loadingPlace = ?, offloadingPlace = ?, loadingDate = ?," +
                 "offloadingDate = ?, customerPrice = ?, carrierPrice = ?," +

@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import lt.vcs.managementprjct.model.Trip;
-import lt.vcs.managementprjct.services.ConnectionClass;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 public class ManagerController extends UserController implements Initializable {
 
@@ -42,11 +42,13 @@ public class ManagerController extends UserController implements Initializable {
     private TableColumn<Trip, Double> carrierPriceCol;
     @FXML
     private TableColumn<Trip, String> driverContactsCol;
+    TripManagementDBConnection connection = new TripManagementDBConnection();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ConnectionClass connectionClass = new ConnectionClass();
-        conn = connectionClass.connect();
+        TripManagementDBConnection connection = new TripManagementDBConnection();
+        conn = connection.connect();
         data = FXCollections.observableArrayList();
         setCell();
         loadDataFromDB();
@@ -72,8 +74,7 @@ public class ManagerController extends UserController implements Initializable {
 
     @FXML
     public void refresh() {
-        ConnectionClass connectionClass = new ConnectionClass();
-        conn = connectionClass.connect();
+        conn = connection.connect();
         data = FXCollections.observableArrayList();
         setCell();
         loadDataFromDB();

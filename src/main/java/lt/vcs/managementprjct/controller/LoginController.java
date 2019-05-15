@@ -10,6 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.AlertBox;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 import java.sql.*;
 
@@ -19,21 +20,18 @@ public class LoginController {
     private Statement st = null;
     //private PreparedStatement pst = null;
     private ResultSet rs = null;
+    TripManagementDBConnection connection = new TripManagementDBConnection();
 
     @FXML
     private TextField loginIssue;
     @FXML
     private PasswordField passIssue;
 
-    public void connect() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-        st = conn.createStatement();
-    }
-
     @FXML
     private void login(ActionEvent event) {
         try {
-            connect();
+            conn = connection.connect();
+            st = conn.createStatement();
             String sql = "SELECT managerID, password FROM Manager WHERE managerID='" + loginIssue.getText() + "'AND password='" + passIssue.getText() + "'";
             rs = st.executeQuery(sql);
 

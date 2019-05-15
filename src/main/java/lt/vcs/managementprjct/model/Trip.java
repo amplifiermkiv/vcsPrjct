@@ -17,8 +17,10 @@ public class Trip {
     private SimpleDoubleProperty carrierPrice;
     private SimpleStringProperty driverContacts;
 
-    public Trip() {
-
+    public Trip(int tripID, double customerPrice, double carrierPrice) {
+        this.tripID = new SimpleIntegerProperty(tripID);
+        this.customerPrice = new SimpleDoubleProperty(customerPrice);
+        this.carrierPrice = new SimpleDoubleProperty(carrierPrice);
     }
 
     public Trip(Integer tripID, Integer customerID, Integer managerID, String company, String loadingPlace, String offloadingPlace,

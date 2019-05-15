@@ -9,11 +9,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.AlertBox;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 import java.io.IOException;
 import java.sql.*;
 
 public class NewTrip {
+    private Connection conn = null;
+    private Statement st = null;
+    private PreparedStatement pst = null;
+    private ResultSet rs = null;
+    TripManagementDBConnection connection = new TripManagementDBConnection();
 
     @FXML
     private TextField tripIDField;
@@ -38,12 +44,6 @@ public class NewTrip {
     @FXML
     private TextArea driverContactsField;
 
-    private Connection conn = null;
-    private Statement st = null;
-    private PreparedStatement pst = null;
-    private ResultSet rs = null;
-
-
     @FXML
     public void display() throws IOException {
         Stage window = new Stage();
@@ -54,19 +54,16 @@ public class NewTrip {
         window.show();
     }
 
-    private void connect() throws SQLException {
-        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-        st = conn.createStatement();
-    }
-
     @FXML
     private void upload() throws SQLException {
-        connect();
+        conn = connection.connect();
+        st = conn.createStatement();
         String sql = "INSERT INTO Trip(tripID, customerID, managerID, company, " +
                 "loadingPlace, offloadingPlace, loadingDate," +
                 "offloadingDate, customerPrice, carrierPrice," +
                 "driverContacts) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (
+                PreparedStatement pstmt = conn.prepareStatement(sql)) {
             Integer tripID = Integer.parseInt(tripIDField.getText());
             Integer customerID = Integer.parseInt(customerIDField.getText());
             Integer managerID = Integer.parseInt(managerIDField.getText());

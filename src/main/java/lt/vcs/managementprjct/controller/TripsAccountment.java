@@ -1,109 +1,82 @@
 package lt.vcs.managementprjct.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import lt.vcs.managementprjct.services.ConnectionClass;
+import lt.vcs.managementprjct.model.Trip;
+import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class TripsAccountment implements Initializable {
-    public ArrayList<Double> custPrice;// = new ArrayList<Double>();
-    public ArrayList<Double> carrPrice;
-    Double results[][];
+public class TripsAccountment implements Initializable{
+    private ObservableList<Trip> accountmentData;// = new ArrayList<Double>();
+    //public ArrayList<Double> carrPrice;
+    //Double results[][];
+    TripManagementDBConnection connection = new TripManagementDBConnection();
     private Connection conn = null;
     private Statement st = null;
     private PreparedStatement pst = null;
     private ResultSet rs = null;
-    //ConnectionClass connectionClass = new ConnectionClass();
-    //conn = connectionClass.connect();
 
     @FXML
-    private AnchorPane borderPane;
-
+    private TableView<Trip> accountmentTableView;
     @FXML
-    private TextField turnoverField;
+    private TableColumn<Trip, Integer> tripIdCol;
     @FXML
-    private TextField profitField;
-
-    private Double[][] loadData() {
-        try {
-            PreparedStatement pst = conn.prepareStatement("SELECT customerPrice, carrierPrice FROM Trip");
-            ResultSet rs = pst.executeQuery();
-
-            while (rs.next()) {
-                custPrice.add(rs.getDouble("customerPrice"));
-                carrPrice.add(rs.getDouble("carrierPrice"));
-            }
-            conn.close();
-
-        } catch (SQLException ex) {
-            ex.getMessage();
-        }
-        int listSize = custPrice.size();
-        results = new Double[2][listSize];
-
-        for (int i = 0; i < listSize; i++) {
-            results[i][0] = custPrice.get(i);
-        }
-        for (int i = 0; i < 2; i++) {
-            results[i][1] = carrPrice.get(i);
-        }
-        return results;
-    }
-
-    double turnover;
-
+    private TableColumn<Trip, Double> customerPriceCol;
     @FXML
-    private double turnoverTotal() {
-        for (double element : custPrice) {
-            System.out.println(element);
-        }
-
-        turnoverField.setText("hsfghdhxf");
-
-        return turnover;
-    }
-
-    Double profit;
-
-    @FXML
-    private Double profitTotal() {
-        for (Double element : carrPrice) {
-            profit = element++;
-        }
-        System.out.println(profit);
-        String stringProfit = profit.toString();
-        profitField.setText(stringProfit);
-        return profit;
-    }
+    private TableColumn<Trip, Double> carrierPriceCol;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ConnectionClass connectionClass = new ConnectionClass();
-        conn = connectionClass.connect();
+        TripManagementDBConnection connection = new TripManagementDBConnection();
+        conn = connection.connect();
+        accountmentData = FXCollections.observableArrayList();
+        setCell();
         loadData();
     }
 
-    public void addNewTrip(ActionEvent event) {
+    private void setCell() {
+        tripIdCol.setCellValueFactory(new PropertyValueFactory<>("tripID"));
+        customerPriceCol.setCellValueFactory(new PropertyValueFactory<>("customerPrice"));
+        carrierPriceCol.setCellValueFactory(new PropertyValueFactory<>("carrierPrice"));
     }
 
-    public void editTrip(ActionEvent event) {
+    public void loadData() {
+        conn = connection.connect();
+        try {
+            PreparedStatement pst = conn.prepareStatement("SELECT tripID, customerPrice, carrierPrice FROM Trip");
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                accountmentData.add(new Trip(rs.getInt("tripID"),
+                        rs.getDouble("customerPrice"),
+                        rs.getDouble("carrierPrice")));
+            }
+            conn.close();
+        } catch (SQLException ex) {
+            ex.getMessage();
+        }
     }
 
-    public void removeTrip(ActionEvent event) {
-    }
 
-    public void refresh(ActionEvent event) {
-    }
-
-    public void logout(ActionEvent event) {
-    }
+/*    public void printSarasas() {
+        System.out.println();
+        System.out.format("%16s%9s%13s%10s\n", "", "Chemija", "Matematika", "Fizika");
+        System.out.println("-----------------------------------------------------");
+        for (int i = 0; i < mokiniai.size(); i++) {
+            System.out.format("%-16s%6d%12d%12d\n", mokiniai.get(i), mokiniuChemija.get(i), mokiniuMatematika.get(i), mokiniuFizika.get(i));
+        }
+        System.out.println("-----------------------------------------------------");
+    }*/
 }

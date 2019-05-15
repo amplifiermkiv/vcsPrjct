@@ -16,7 +16,7 @@
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <buttons>
             <Text fx:id="userNameLabel" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" />
-            <Label fx:id="userNameLabel" minWidth="200.0" text="Name Surname" />
+            <Label fx:id="userNameLabel1" minWidth="200.0" text="Name Surname" />
             <Button mnemonicParsing="false" onAction="#logout" text="Logout" />
          </buttons>
          <BorderPane.margin>
