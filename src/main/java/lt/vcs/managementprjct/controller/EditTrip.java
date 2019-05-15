@@ -1,7 +1,9 @@
 package lt.vcs.managementprjct.controller;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
@@ -9,11 +11,16 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.AlertBox;
+import lt.vcs.managementprjct.model.Trip;
+import lt.vcs.managementprjct.services.ConnectionClass;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
 public class EditTrip {
+    private ObservableList<Trip> data;
 
     @FXML
     private TextField tripIDField;
@@ -38,10 +45,10 @@ public class EditTrip {
     @FXML
     private TextArea driverContactsField;
 
-    private Connection conn = null;
-    private Statement st = null;
-    private PreparedStatement pst = null;
-    private ResultSet rs = null;
+    private Connection conn;
+    private Statement st;
+    private PreparedStatement pst;
+    private ResultSet rs;
 
     @FXML
     public void display() throws IOException {
@@ -53,12 +60,34 @@ public class EditTrip {
         window.show();
     }
 
-    public void connect() {
+    private void connect() throws SQLException {
+        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
+        st = conn.createStatement();
+    }
+
+    @FXML
+    private void loadCurrentInfo() throws SQLException {
+        connect();
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-            st = conn.createStatement();
-        } catch (Exception e) {
-            System.out.println(e);
+            PreparedStatement pst = conn.prepareStatement("SELECT * FROM Trip WHERE tripID = " + tripIDField.getText());
+            ResultSet rs = pst.executeQuery();
+
+            while (rs.next()) {
+                tripIDField.setText(rs.getInt("tripID") + "");
+                customerIDField.setText(rs.getInt("customerID") + "");
+                managerIDField.setText(rs.getInt("managerID") + "");
+                companyField.setText(rs.getString("company"));
+                loadingPlaceField.setText(rs.getString("loadingPlace"));
+                offloadingPlaceField.setText(rs.getString("loadingPlace"));
+                loadingDateField.setText(rs.getString("loadingDate"));
+                offloadingDateField.setText(rs.getString("offloadingDate"));
+                customerPriceField.setText(rs.getDouble("customerPrice") + "");
+                carrierPriceField.setText(rs.getDouble("carrierPrice") + "");
+                driverContactsField.setText(rs.getString("driverContacts"));
+            }
+            conn.close();
+        } catch (SQLException ex) {
+            ex.getMessage();
         }
     }
 
@@ -96,7 +125,7 @@ public class EditTrip {
             pstmt.executeUpdate();
             AlertBox alertBox = new AlertBox();
             alertBox.display("SQL message", "Data base updated successfully");
-
+            conn.close();
         } catch (NumberFormatException en) {
             AlertBox alertBox = new AlertBox();
             alertBox.display("Wrong number format", "Repeat input. " + en.getMessage());
@@ -106,8 +135,6 @@ public class EditTrip {
             alertBox.display("SQL connection", "No SQL connection or repeated data base line");
             System.out.println(e.getMessage());
         }
-        conn.close();
     }
-
 }
 

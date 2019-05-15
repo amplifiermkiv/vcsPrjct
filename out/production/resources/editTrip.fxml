@@ -38,7 +38,8 @@
                      <top>
                         <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <buttons>
-                            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#upload" text="save changes" />
+                            <Button fx:id="loadCurrentInfo" mnemonicParsing="false" onAction="#loadCurrentInfo" text="load current info" />
+                              <Button fx:id="saveBtn1" layoutX="1183.0" layoutY="13.0" mnemonicParsing="false" onAction="#upload" text="save changes" />
                           </buttons>
                            <BorderPane.margin>
                               <Insets />

@@ -17,7 +17,7 @@ public class LoginController {
 
     private Connection conn = null;
     private Statement st = null;
-    private PreparedStatement pst = null;
+    //private PreparedStatement pst = null;
     private ResultSet rs = null;
 
     @FXML
@@ -25,13 +25,9 @@ public class LoginController {
     @FXML
     private PasswordField passIssue;
 
-    public void connect() {
-        try {
-            conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-            st = conn.createStatement();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+    public void connect() throws SQLException {
+        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
+        st = conn.createStatement();
     }
 
     @FXML
@@ -53,38 +49,25 @@ public class LoginController {
                 alertBox.display("Alert window", "Wrong username or password");
                 System.out.println("Access denied!");
             }
-
+            conn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
     @FXML
-    private void clearFields(ActionEvent event) {
+    private void clearFields() {
         loginIssue.setText("");
         passIssue.setText("");
     }
 
-    private void userChoser() {
+/*    private void userChoser() {
         if (loginIssue.equals("admin")) {
             //TODO
             // login.admin()
         } else {
             //TODO
             // login.manager()
-        }
-    }
-
-    //TODO įdomu, kodėl nepavyksta autorizuotis per klasę ConnectionClass
-/*     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        try {
-            ConnectionClass connectionClass = new ConnectionClass();
-            con = connectionClass.connect();
-            st = con.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }*/
 }

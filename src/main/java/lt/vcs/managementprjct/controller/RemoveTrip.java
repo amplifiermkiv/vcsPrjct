@@ -17,7 +17,7 @@ public class RemoveTrip {
     private Connection conn = null;
     private Statement st = null;
     private PreparedStatement pst = null;
-    private ResultSet rs = null;
+    //private ResultSet rs = null;
 
     @FXML
     private TextField removeTripField;
@@ -32,31 +32,25 @@ public class RemoveTrip {
         window.show();
     }
 
-    public void connect() {
-        try {
-            conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-            st = conn.createStatement();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+    private void connect() throws SQLException {
+        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
+        st = conn.createStatement();
     }
 
     @FXML
     public void removeConfirmation() throws SQLException {
         connect();
         Integer tripID = Integer.parseInt(removeTripField.getText());
-        //ConnectionClass connectionClass = new ConnectionClass();
-        //conn = connectionClass.connect();
         String sql = "DELETE FROM Trip WHERE tripID = " + tripID;
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.executeUpdate();
             AlertBox alertBox = new AlertBox();
             alertBox.display("Remove info", "Record was removed successfully");
+            conn.close();
         } catch (SQLException e) {
             AlertBox alertBox = new AlertBox();
             alertBox.display("Remove info", "There is no such record " + e.getMessage());
             System.out.println(e.getMessage());
         }
-        conn.close();
     }
 }

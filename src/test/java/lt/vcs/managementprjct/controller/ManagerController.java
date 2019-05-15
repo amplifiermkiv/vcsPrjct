@@ -16,18 +16,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lt.vcs.managementprjct.model.Trip;
 import lt.vcs.managementprjct.services.ConnectionClass;
 
 
-public class ManagerController extends UserController implements Initializable {
+public class ManagerController extends UserControllerTest implements Initializable {
 
     private ObservableList<Trip> data;
 
@@ -117,8 +113,8 @@ public class ManagerController extends UserController implements Initializable {
         Stage window = (Stage) ((Node) event1.getSource()).getScene().getWindow();
         window.setScene(newScene);
         window.show();*/
-        AddNew addNew = new AddNew();
-        addNew.display();
+        NewTrip newTrip = new NewTrip();
+        newTrip.display();
 
 /*        Integer tripID = Integer.parseInt(tripIDField.getText());
         Integer customerID = Integer.parseInt(customerIDField.getText());
@@ -207,6 +203,12 @@ public class ManagerController extends UserController implements Initializable {
     }
 
     public void removeTrip(ActionEvent event) {
+    }
+
+    public void editTrip(ActionEvent event) {
+    }
+
+    public void newTrip(ActionEvent event) {
     }
 
 /*    @FXML

@@ -13,7 +13,7 @@ import lt.vcs.managementprjct.model.AlertBox;
 import java.io.IOException;
 import java.sql.*;
 
-public class AddNew {
+public class NewTrip {
 
     @FXML
     private TextField tripIDField;
@@ -43,6 +43,7 @@ public class AddNew {
     private PreparedStatement pst = null;
     private ResultSet rs = null;
 
+
     @FXML
     public void display() throws IOException {
         Stage window = new Stage();
@@ -53,13 +54,9 @@ public class AddNew {
         window.show();
     }
 
-    public void connect() {
-        try {
-            conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
-            st = conn.createStatement();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
+    private void connect() throws SQLException {
+        conn = DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db", "root", "");
+        st = conn.createStatement();
     }
 
     @FXML
@@ -96,7 +93,7 @@ public class AddNew {
             pstmt.executeUpdate();
             AlertBox alertBox = new AlertBox();
             alertBox.display("SQL message", "Data base updated successfully");
-
+            conn.close();
         } catch (NumberFormatException en) {
             AlertBox alertBox = new AlertBox();
             alertBox.display("Wrong number format", "Repeat input. " + en.getMessage());
@@ -106,8 +103,5 @@ public class AddNew {
             alertBox.display("SQL connection", "No SQL connection or repeated data base line");
             System.out.println(e.getMessage());
         }
-        conn.close();
     }
-
-
 }

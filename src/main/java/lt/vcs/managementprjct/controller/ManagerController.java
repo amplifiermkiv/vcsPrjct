@@ -21,7 +21,7 @@ public class ManagerController extends UserController implements Initializable {
     @FXML
     private TableView<Trip> tripsTableView;
     @FXML
-    private TableColumn<Object, String> tripIdCol;
+    private TableColumn<Trip, Integer> tripIdCol;
     @FXML
     private TableColumn<Trip, Integer> customerIdCol;
     @FXML
@@ -53,23 +53,9 @@ public class ManagerController extends UserController implements Initializable {
     }
 
     @FXML
-    public void refresh() {
-        ConnectionClass connectionClass = new ConnectionClass();
-        conn = connectionClass.connect();
-        data = FXCollections.observableArrayList();
-        setCell();
-        loadDataFromDB();
-    }
-
-    @FXML
-    public void addNewTrip() throws IOException {
-/*        Parent newParent = FXMLLoader.load(getClass().getResource("/newTrip.fxml"));
-        Scene newScene = new Scene(newParent);
-        Stage window = (Stage) ((Node) event1.getSource()).getScene().getWindow();
-        window.setScene(newScene);
-        window.show();*/
-        AddNew addNew = new AddNew();
-        addNew.display();
+    public void newTrip() throws IOException {
+        NewTrip newTrip = new NewTrip();
+        newTrip.display();
     }
 
     @FXML
@@ -82,6 +68,15 @@ public class ManagerController extends UserController implements Initializable {
     public void editTrip() throws IOException {
         EditTrip editTrip = new EditTrip();
         editTrip.display();
+    }
+
+    @FXML
+    public void refresh() {
+        ConnectionClass connectionClass = new ConnectionClass();
+        conn = connectionClass.connect();
+        data = FXCollections.observableArrayList();
+        setCell();
+        loadDataFromDB();
     }
 
     private void setCell() {
@@ -111,12 +106,11 @@ public class ManagerController extends UserController implements Initializable {
                         rs.getDouble("customerPrice"), rs.getDouble("carrierPrice"),
                         rs.getString("driverContacts")));
             }
-
+            conn.close();
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            ex.getMessage();
         }
         tripsTableView.setItems(data);
-
     }
 }
 

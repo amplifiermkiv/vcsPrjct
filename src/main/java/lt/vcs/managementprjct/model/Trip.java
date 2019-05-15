@@ -40,12 +40,8 @@ public class Trip {
         return tripID.get();
     }
 
-    public SimpleIntegerProperty tripIDProperty() {
-        return tripID;
-    }
-
-    public void setTripID(int tripID) {
-        this.tripID.set(tripID);
+    public SimpleIntegerProperty tripIDProperty(int tripID) {
+        return this.tripID;
     }
 
     public int getCustomerID() {
@@ -56,20 +52,12 @@ public class Trip {
         return customerID;
     }
 
-    public void setCustomerID(int customerID) {
-        this.customerID.set(customerID);
-    }
-
     public int getManagerID() {
         return managerID.get();
     }
 
     public SimpleIntegerProperty managerIDProperty() {
         return managerID;
-    }
-
-    public void setManagerID(int managerID) {
-        this.managerID.set(managerID);
     }
 
     public String getCompany() {
@@ -80,20 +68,12 @@ public class Trip {
         return company;
     }
 
-    public void setCompany(String company) {
-        this.company.set(company);
-    }
-
     public String getLoadingPlace() {
         return loadingPlace.get();
     }
 
     public SimpleStringProperty loadingPlaceProperty() {
         return loadingPlace;
-    }
-
-    public void setLoadingPlace(String loadingPlace) {
-        this.loadingPlace.set(loadingPlace);
     }
 
     public String getOffloadingPlace() {
@@ -104,20 +84,12 @@ public class Trip {
         return offloadingPlace;
     }
 
-    public void setOffloadingPlace(String offloadingPlace) {
-        this.offloadingPlace.set(offloadingPlace);
-    }
-
     public String getLoadingDate() {
         return loadingDate.get();
     }
 
     public SimpleStringProperty loadingDateProperty() {
         return loadingDate;
-    }
-
-    public void setLoadingDate(String loadingDate) {
-        this.loadingDate.set(loadingDate);
     }
 
     public String getOffloadingDate() {
@@ -128,20 +100,12 @@ public class Trip {
         return offloadingDate;
     }
 
-    public void setOffloadingDate(String offloadingDate) {
-        this.offloadingDate.set(offloadingDate);
-    }
-
     public double getCustomerPrice() {
         return customerPrice.get();
     }
 
     public SimpleDoubleProperty customerPriceProperty() {
         return customerPrice;
-    }
-
-    public void setCustomerPrice(double customerPrice) {
-        this.customerPrice.set(customerPrice);
     }
 
     public double getCarrierPrice() {
@@ -152,10 +116,6 @@ public class Trip {
         return carrierPrice;
     }
 
-    public void setCarrierPrice(double carrierPrice) {
-        this.carrierPrice.set(carrierPrice);
-    }
-
     public String getDriverContacts() {
         return driverContacts.get();
     }
@@ -164,7 +124,4 @@ public class Trip {
         return driverContacts;
     }
 
-    public void setDriverContacts(String driverContacts) {
-        this.driverContacts.set(driverContacts);
-    }
 }

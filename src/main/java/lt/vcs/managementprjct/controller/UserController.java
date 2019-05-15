@@ -24,7 +24,7 @@ public abstract class UserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ConnectionClass connectionClass = new ConnectionClass();
-        conn = connectionClass.connect();
+        conn = connectionClass.connect1();
     }
 
     @FXML
@@ -36,7 +36,6 @@ public abstract class UserController implements Initializable {
         window.setScene(logoutScene);
         window.show();
     }
-
 }
 
 
