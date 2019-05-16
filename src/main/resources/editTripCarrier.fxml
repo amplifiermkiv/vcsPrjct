@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vcs.managementprjct.controller.NewTrip">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vcs.managementprjct.controller.EditTripCarrier">
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -27,13 +27,14 @@
    <center>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
          <tabs>
-            <Tab text="New Trip">
+            <Tab text="Edit Trip">
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <top>
                         <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <buttons>
-                            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#upload" text="save" />
+                            <Button fx:id="loadCurrentInfo" mnemonicParsing="false" onAction="#loadCurrentInfo" text="load trip data" />
+                              <Button fx:id="saveBtn" layoutX="1183.0" layoutY="13.0" mnemonicParsing="false" onAction="#upload" text="save changes" />
                           </buttons>
                            <BorderPane.margin>
                               <Insets />
@@ -54,45 +55,27 @@
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                           </columnConstraints>
                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="130.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="80.0" minHeight="80.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="33.0" minHeight="33.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="36.0" minHeight="36.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="120.0" minHeight="120.0" prefHeight="120.0" vgrow="SOMETIMES" />
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label text="TripID" GridPane.halignment="RIGHT">
+                              <Label text="TripID" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
                                  </GridPane.margin></Label>
-                              <TextField fx:id="tripIDField" GridPane.columnIndex="1" />
-                              <Label layoutX="10.0" layoutY="40.0" text="CustomerID" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets right="30.0" />
-                                 </GridPane.margin></Label>
-                              <Label layoutX="10.0" layoutY="116.0" text="ManagerID" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-                                 <GridPane.margin>
-                                    <Insets right="30.0" />
-                                 </GridPane.margin></Label>
-                              <Label layoutX="10.0" layoutY="192.0" text="Company" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                                 <GridPane.margin>
-                                    <Insets right="30.0" />
-                                 </GridPane.margin></Label>
-                              <TextField fx:id="customerIDField" layoutX="330.0" layoutY="36.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="managerIDField" layoutX="330.0" layoutY="112.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <TextField fx:id="carrierIDField" layoutX="330.0" layoutY="188.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                              <Label layoutX="156.0" layoutY="268.0" text="Contact Person" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                              <TextField fx:id="tripIDField" promptText="Enter tipID, then load data to edit it..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label layoutX="156.0" layoutY="344.0" text="Driver contacts" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField fx:id="loadingDateField" layoutX="1034.0" layoutY="112.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <TextField fx:id="loadingDateField" layoutX="1034.0" layoutY="112.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                               <Label layoutX="203.0" layoutY="40.0" text="Loading place" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
@@ -103,38 +86,26 @@
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label layoutX="778.0" layoutY="116.0" text="Loading date" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                              <Label layoutX="778.0" layoutY="116.0" text="Loading date" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label layoutX="778.0" layoutY="192.0" text="Offloading date" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                              <Label layoutX="778.0" layoutY="192.0" text="Offloading date" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </Label>
-                              <TextField fx:id="offloadingDateField" layoutX="1034.0" layoutY="188.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                              <TextField fx:id="customerPriceField" layoutX="1034.0" layoutY="264.0" GridPane.columnIndex="4" />
-                              <TextField fx:id="carrierPriceField" layoutX="1034.0" layoutY="340.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                              <Label layoutX="778.0" layoutY="268.0" text="Customer price" GridPane.columnIndex="3" GridPane.halignment="RIGHT">
+                              <TextField fx:id="offloadingDateField" layoutX="1034.0" layoutY="188.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                              <TextField fx:id="carrierPriceField" layoutX="1034.0" layoutY="340.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Label layoutX="778.0" layoutY="344.0" text="Carrier price" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="30.0" />
                                  </GridPane.margin>
                               </Label>
-                              <Label layoutX="778.0" layoutY="344.0" text="Carrier price" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                                 <GridPane.margin>
-                                    <Insets right="30.0" />
-                                 </GridPane.margin>
-                              </Label>
-                              <TextArea fx:id="contactPersonField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextArea fx:id="driverContactsField" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                               <TextArea fx:id="loadingPlaceField" layoutX="190.0" layoutY="390.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                               <TextArea fx:id="offloadingPlaceField" layoutX="750.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
-                              <TextArea fx:id="companyField" layoutX="190.0" layoutY="390.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                              <Label layoutX="101.0" layoutY="192.0" text="CarrierID" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
-                                 <GridPane.margin>
-                                    <Insets right="30.0" />
-                                 </GridPane.margin>
-                              </Label>
                            </children>
                         </GridPane>
                      </center>

@@ -3,11 +3,9 @@ package lt.vcs.managementprjct.services;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class TripManagementDBConnection {
     public Connection connection;
-    public Statement statement;
 
     public Connection connect() {
         try {

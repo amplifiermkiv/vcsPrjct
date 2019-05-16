@@ -14,29 +14,27 @@ import java.io.IOException;
 import java.sql.*;
 
 public class RemoveTrip {
-    TripManagementDBConnection connection = new TripManagementDBConnection();
+    @FXML
+    private TextField removeTripField;
     private Connection conn = null;
     private Statement st = null;
     private PreparedStatement pst = null;
-    //private ResultSet rs = null;
-
-    @FXML
-    private TextField removeTripField;
+    TripManagementDBConnection connection = new TripManagementDBConnection();
 
     @FXML
     public void display() throws IOException {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent newParent = FXMLLoader.load(getClass().getResource("/removeTrip.fxml"));
-        Scene newScene = new Scene(newParent);
-        window.setScene(newScene);
+        Parent parent = FXMLLoader.load(getClass().getResource("/removeTrip.fxml"));
+        Scene scene = new Scene(parent);
+        window.setScene(scene);
         window.show();
     }
 
     @FXML
     public void removeConfirmation() {
         conn = connection.connect();
-        Integer tripID = Integer.parseInt(removeTripField.getText());
+        int tripID = Integer.parseInt(removeTripField.getText());
         String sql = "DELETE FROM Trip WHERE tripID = " + tripID;
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.executeUpdate();

@@ -12,10 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public abstract class UserController {
-    //TripManagementDBConnection connection = new TripManagementDBConnection();
     protected Connection conn = null;
-    protected PreparedStatement pst = null;
-    protected ResultSet rs = null;
 
     @FXML
     protected void logout(ActionEvent event) throws IOException, SQLException {

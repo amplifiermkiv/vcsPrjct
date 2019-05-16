@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vcs.managementprjct.controller.RemoveTrip">
-   <children>
-      <TextField fx:id="removeTripField" layoutX="126.0" layoutY="100.0" promptText="Enter tripID..." />
-      <Button layoutX="178.0" layoutY="145.0" mnemonicParsing="false" onAction="#removeConfirmation" text="confirm" />
-      <Label layoutX="108.0" layoutY="58.0" text="Enter tripID you wish to remove">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0"
+            prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lt.vcs.managementprjct.controller.RemoveTrip">
+   <TextField fx:id="removeTripField" layoutX="126.0" layoutY="100.0" promptText="Enter tripID..."/>
+   <Button layoutX="178.0" layoutY="145.0" mnemonicParsing="false" onAction="#removeConfirmation" text="confirm"/>
+   <Label layoutX="108.0" layoutY="58.0" text="Enter tripID you wish to remove">
+      <font>
+         <Font size="14.0"/>
+      </font>
+   </Label>
 </AnchorPane>
