@@ -1,20 +1,23 @@
 package lt.vcs.managementprjct.controller;
 
-import java.io.IOException;
-import java.net.URL;
-import java.sql.*;
-import java.util.ResourceBundle;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lt.vcs.managementprjct.model.AlertBox;
 import lt.vcs.managementprjct.model.Trip;
 import lt.vcs.managementprjct.services.TripManagementDBConnection;
 
-public class ManagerController extends UserController implements Initializable {
+import java.io.IOException;
+import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
+public class CarrierController extends ManagerController {
     @FXML
     private TableView<Trip> tripsTableView;
     @FXML
@@ -22,11 +25,7 @@ public class ManagerController extends UserController implements Initializable {
     @FXML
     private TableColumn<Trip, Integer> customerIdCol;
     @FXML
-    private TableColumn<Trip, Integer> carrierIdCol;
-    @FXML
     private TableColumn<Trip, String> companyCol;
-    @FXML
-    private TableColumn<Trip, String> contactPersonCol;
     @FXML
     private TableColumn<Trip, String> loadingPlaceCol;
     @FXML
@@ -35,8 +34,6 @@ public class ManagerController extends UserController implements Initializable {
     private TableColumn<Trip, String> loadingDateCol;
     @FXML
     private TableColumn<Trip, String> offloadingDateCol;
-    @FXML
-    private TableColumn<Trip, Double> customerPriceCol;
     @FXML
     private TableColumn<Trip, Double> carrierPriceCol;
     @FXML
@@ -53,31 +50,26 @@ public class ManagerController extends UserController implements Initializable {
         loadDataFromDB();
     }
 
-    @FXML
-    public void newTrip() throws IOException {
-        NewTrip newTrip = new NewTrip();
-        newTrip.display();
+    @Override
+    public void newTrip() {
+        AlertBox alertBox = new AlertBox();
+        alertBox.display("Warning", "Carrier can't create new trips!");
     }
 
-    @FXML
-    public void removeTrip() throws IOException {
-        RemoveTrip removeTrip = new RemoveTrip();
-        removeTrip.display();
+    @Override
+    public void removeTrip() {
+        AlertBox alertBox = new AlertBox();
+        alertBox.display("Warning", "Carrier can't remove trips!");
     }
 
-    @FXML
+    @Override
     public void editTrip() throws IOException {
-        EditTrip editTrip = new EditTrip();
+        EditTripCarrier editTrip = new EditTripCarrier();
         editTrip.display();
     }
 
     @FXML
-    public void callAccountment() throws IOException {
-        TripsAccountment accountment = new TripsAccountment();
-        accountment.display();
-    }
-
-    @FXML
+    @Override
     public void refresh() {
         conn = connection.connect();
         data = FXCollections.observableArrayList();
@@ -85,21 +77,26 @@ public class ManagerController extends UserController implements Initializable {
         loadDataFromDB();
     }
 
+    @Override
+    public void callAccountment() {
+        AlertBox alertBox = new AlertBox();
+        alertBox.display("Warning", "Carrier can't call accountment!");
+    }
+
+    @Override
     protected void setCell() {
         tripIdCol.setCellValueFactory(new PropertyValueFactory<>("tripID"));
         customerIdCol.setCellValueFactory(new PropertyValueFactory<>("customerID"));
         companyCol.setCellValueFactory(new PropertyValueFactory<>("company"));
-        contactPersonCol.setCellValueFactory(new PropertyValueFactory<>("contactPerson"));
-        carrierIdCol.setCellValueFactory(new PropertyValueFactory<>("carrierID"));
         loadingPlaceCol.setCellValueFactory(new PropertyValueFactory<>("loadingPlace"));
         offloadingPlaceCol.setCellValueFactory(new PropertyValueFactory<>("offloadingPlace"));
         loadingDateCol.setCellValueFactory(new PropertyValueFactory<>("loadingDate"));
         offloadingDateCol.setCellValueFactory(new PropertyValueFactory<>("offloadingDate"));
-        customerPriceCol.setCellValueFactory(new PropertyValueFactory<>("customerPrice"));
         carrierPriceCol.setCellValueFactory(new PropertyValueFactory<>("carrierPrice"));
         driverContactsCol.setCellValueFactory(new PropertyValueFactory<>("driverContacts"));
     }
 
+    @Override
     protected void loadDataFromDB() {
         try {
             PreparedStatement pst = conn.prepareStatement("SELECT * FROM Trip");
@@ -107,11 +104,10 @@ public class ManagerController extends UserController implements Initializable {
 
             while (rs.next()) {
                 data.add(new Trip(rs.getInt("tripID"), rs.getInt("customerID"),
-                        rs.getString("company"), rs.getString("contactPerson"),
-                        rs.getInt("carrierID"), rs.getString("loadingPlace"),
+                        rs.getString("company"), rs.getString("loadingPlace"),
                         rs.getString("offloadingPlace"), rs.getString("loadingDate"),
-                        rs.getString("offloadingDate"), rs.getDouble("customerPrice"),
-                        rs.getDouble("carrierPrice"), rs.getString("driverContacts")));
+                        rs.getString("offloadingDate"), rs.getDouble("carrierPrice"),
+                        rs.getString("driverContacts")));
             }
             conn.close();
         } catch (SQLException ex) {
@@ -120,4 +116,3 @@ public class ManagerController extends UserController implements Initializable {
         tripsTableView.setItems(data);
     }
 }
-

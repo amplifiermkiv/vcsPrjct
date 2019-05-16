@@ -9,12 +9,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
 
 <BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vcs.managementprjct.controller.ManagerController">
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <buttons>
-            <Label text="manager" />
+            <Text fx:id="userNameLabel" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" />
+            <Label fx:id="userNameLabel1" minWidth="200.0" text="Name Surname" />
             <Button mnemonicParsing="false" onAction="#logout" text="Logout" />
          </buttons>
          <BorderPane.margin>
@@ -34,18 +36,17 @@
                      <center>
                         <TableView fx:id="tripsTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                            <columns>
-                              <TableColumn fx:id="tripIdCol" minWidth="80.0" text="ID" />
-                              <TableColumn fx:id="customerIdCol" minWidth="95.0" prefWidth="95.0" text="CustomerID" />
-                              <TableColumn fx:id="companyCol" minWidth="100.0" prefWidth="100.0" text="Company" />
-                              <TableColumn fx:id="contactPersonCol" minWidth="100.0" prefWidth="120.0" text="Contact Person" />
-                              <TableColumn fx:id="carrierIdCol" maxWidth="0.0" minWidth="90.0" prefWidth="90.0" text="CarrierID" />
-                              <TableColumn fx:id="loadingPlaceCol" maxWidth="-1.0" minWidth="125.0" prefWidth="125.0" text="Loading place" />
-                              <TableColumn fx:id="offloadingPlaceCol" maxWidth="-1.0" minWidth="125.0" prefWidth="125.0" text="Offloading place" />
-                              <TableColumn fx:id="loadingDateCol" maxWidth="-1.0" minWidth="110.0" prefWidth="110.0" text="Loading date" />
-                              <TableColumn fx:id="offloadingDateCol" maxWidth="105.0" minWidth="110.0" prefWidth="110.0" text="Offloading date" />
-                              <TableColumn fx:id="customerPriceCol" maxWidth="105.0" minWidth="105.0" prefWidth="105.0" text="Customer price" />
-                              <TableColumn fx:id="carrierPriceCol" maxWidth="105.0" minWidth="105.0" prefWidth="105.0" text="Carrier price" />
-                              <TableColumn fx:id="driverContactsCol" minWidth="115.0" prefWidth="115.0" text="Driver contacts" />
+                              <TableColumn fx:id="tripIdCol" minWidth="100.0" prefWidth="-1.0" resizable="false" text="ID" />
+                              <TableColumn fx:id="customerIdCol" minWidth="110.0" prefWidth="-1.0" text="CustomerID" />
+                              <TableColumn fx:id="managerIdCol" minWidth="0.0" prefWidth="-1.0" text="ManagerID" />
+                              <TableColumn fx:id="companyCol" minWidth="150.0" prefWidth="-1.0" text="Company" />
+                              <TableColumn fx:id="loadingPlaceCol" minWidth="145.0" prefWidth="-1.0" text="Loading place" />
+                              <TableColumn fx:id="offloadingPlaceCol" minWidth="145.0" prefWidth="-1.0" text="Offloading place" />
+                              <TableColumn fx:id="loadingDateCol" minWidth="130.0" prefWidth="-1.0" text="Loading date" />
+                              <TableColumn fx:id="offloadingDateCol" minWidth="130.0" prefWidth="-1.0" text="Offloading date" />
+                              <TableColumn fx:id="customerPriceCol" minWidth="110.0" prefWidth="-1.0" text="Customer price" />
+                              <TableColumn fx:id="carrierPriceCol" minWidth="110.0" prefWidth="-1.0" text="Carrier price" />
+                              <TableColumn fx:id="driverContactsCol" minWidth="150.0" prefWidth="-1.0" text="Driver contacts" />
                            </columns>
                         </TableView>
                      </center>
@@ -54,9 +55,8 @@
                           <buttons>
                               <Button layoutX="1195.0" layoutY="18.0" mnemonicParsing="false" onAction="#newTrip" text="+New Order" />
                             <Button mnemonicParsing="false" onAction="#editTrip" text="edit" />
-                              <Button  layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#removeTrip" text="remove" />
-                              <Button  layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#refresh" text="refresh" />
-                              <Button  layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#callAccountment" text="accountment" />
+                              <Button fx:id="removeTripBtn" layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#removeTrip" text="remove" />
+                              <Button fx:id="removeTripBtn1" layoutX="1187.0" layoutY="13.0" mnemonicParsing="false" onAction="#refresh" text="refresh" />
                           </buttons>
                            <BorderPane.margin>
                               <Insets />

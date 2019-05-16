@@ -7,7 +7,7 @@ import javafx.beans.property.SimpleStringProperty;
 public class Trip {
     private SimpleIntegerProperty tripID;
     private SimpleIntegerProperty customerID;
-    private SimpleIntegerProperty managerID;
+    private SimpleIntegerProperty carrierID;
     private SimpleStringProperty company;
     private SimpleStringProperty loadingPlace;
     private SimpleStringProperty offloadingPlace;
@@ -16,16 +16,40 @@ public class Trip {
     private SimpleDoubleProperty customerPrice;
     private SimpleDoubleProperty carrierPrice;
     private SimpleStringProperty driverContacts;
+    private SimpleStringProperty contactPerson;
+    private SimpleDoubleProperty difference;
 
-    public Trip() {
-
+    public Trip(int tripID, double customerPrice, double carrierPrice) {
+        this.tripID = new SimpleIntegerProperty(tripID);
+        this.customerPrice = new SimpleDoubleProperty(customerPrice);
+        this.carrierPrice = new SimpleDoubleProperty(carrierPrice);
     }
 
-    public Trip(Integer tripID, Integer customerID, Integer managerID, String company, String loadingPlace, String offloadingPlace,
-                String loadingDate, String offloadingDate, Double customerPrice, Double carrierPrice, String driverContacts) {
+    public Trip(int tripID, double customerPrice, double carrierPrice, double difference) {
+        this.tripID = new SimpleIntegerProperty(tripID);
+        this.customerPrice = new SimpleDoubleProperty(customerPrice);
+        this.carrierPrice = new SimpleDoubleProperty(carrierPrice);
+        this.difference = new SimpleDoubleProperty(difference);
+    }
+
+    public Trip(Integer tripID, Integer customerID, String company, String loadingPlace, String offloadingPlace,
+                String loadingDate, String offloadingDate, Double carrierPrice, String driverContacts) {
         this.tripID = new SimpleIntegerProperty(tripID);
         this.customerID = new SimpleIntegerProperty(customerID);
-        this.managerID = new SimpleIntegerProperty(managerID);
+        this.company = new SimpleStringProperty(company);
+        this.loadingPlace = new SimpleStringProperty(loadingPlace);
+        this.offloadingPlace = new SimpleStringProperty(offloadingPlace);
+        this.loadingDate = new SimpleStringProperty(loadingDate);
+        this.offloadingDate = new SimpleStringProperty(offloadingDate);
+        this.carrierPrice = new SimpleDoubleProperty(carrierPrice);
+        this.driverContacts = new SimpleStringProperty(driverContacts);
+    }
+
+    public Trip(int tripID, int customerID, String company, String contactPerson, int carrierID, String loadingPlace, String offloadingPlace,
+                String loadingDate, String offloadingDate, double customerPrice, double carrierPrice, String driverContacts) {
+        this.tripID = new SimpleIntegerProperty(tripID);
+        this.customerID = new SimpleIntegerProperty(customerID);
+        this.carrierID = new SimpleIntegerProperty(carrierID);
         this.company = new SimpleStringProperty(company);
         this.loadingPlace = new SimpleStringProperty(loadingPlace);
         this.offloadingPlace = new SimpleStringProperty(offloadingPlace);
@@ -33,6 +57,7 @@ public class Trip {
         this.offloadingDate = new SimpleStringProperty(offloadingDate);
         this.customerPrice = new SimpleDoubleProperty(customerPrice);
         this.carrierPrice = new SimpleDoubleProperty(carrierPrice);
+        this.contactPerson = new SimpleStringProperty(contactPerson);
         this.driverContacts = new SimpleStringProperty(driverContacts);
     }
 
@@ -60,16 +85,16 @@ public class Trip {
         this.customerID.set(customerID);
     }
 
-    public int getManagerID() {
-        return managerID.get();
+    public int getCarrierID() {
+        return carrierID.get();
     }
 
-    public SimpleIntegerProperty managerIDProperty() {
-        return managerID;
+    public SimpleIntegerProperty carrierIDProperty() {
+        return carrierID;
     }
 
-    public void setManagerID(int managerID) {
-        this.managerID.set(managerID);
+    public void setCarrierID(int carrierID) {
+        this.carrierID.set(carrierID);
     }
 
     public String getCompany() {
@@ -166,5 +191,29 @@ public class Trip {
 
     public void setDriverContacts(String driverContacts) {
         this.driverContacts.set(driverContacts);
+    }
+
+    public String getContactPerson() {
+        return contactPerson.get();
+    }
+
+    public SimpleStringProperty contactPersonProperty() {
+        return contactPerson;
+    }
+
+    public void setContactPerson(String contactPerson) {
+        this.contactPerson.set(contactPerson);
+    }
+
+    public double getDifference() {
+        return difference.get();
+    }
+
+    public SimpleDoubleProperty differenceProperty() {
+        return difference;
+    }
+
+    public void setDifference(double difference) {
+        this.difference.set(difference);
     }
 }

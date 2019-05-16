@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lt.vcs.managementprjct.controller.TripsAccountment">
+   <top>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </ButtonBar>
+   </top>
+   <center>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab text="Accountment">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <top>
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <BorderPane.margin>
+                              <Insets />
+                           </BorderPane.margin>
+                           <padding>
+                              <Insets bottom="5.0" right="20.0" top="5.0" />
+                           </padding>
+                        </ButtonBar>
+                     </top>
+                     <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="accountmentTableView" layoutX="51.0" layoutY="22.0" prefHeight="551.0" prefWidth="494.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="756.0" AnchorPane.topAnchor="30.0">
+                                <columns>
+                                  <TableColumn fx:id="tripIdCol" prefWidth="116.0" text="TripID" />
+                                  <TableColumn fx:id="customerPriceCol" prefWidth="118.0" text="Customer price" />
+                                    <TableColumn fx:id="carrierPriceCol" prefWidth="119.0" text="Carrier price" />
+                                    <TableColumn fx:id="differenceCol" prefWidth="140.0" text="Difference" />
+                                </columns>
+                              </TableView>
+                              <TableView fx:id="managersTableView" layoutX="906.0" layoutY="22.0" prefHeight="540.0" prefWidth="347.0" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="30.0">
+                                 <columns>
+                                    <TableColumn fx:id="managerIDCol" prefWidth="133.0" text="Manager ID" />
+                                    <TableColumn fx:id="managerNameCol" prefWidth="213.0" text="Manager name" />
+                                 </columns>
+                              </TableView>
+                              <GridPane layoutX="630.0" layoutY="54.0" prefHeight="340.0" prefWidth="181.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <TextField fx:id="managerIDField" promptText="Enter managerID..." GridPane.rowIndex="1" />
+                                    <Label text="Selected manager profit" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+                                    <TextField fx:id="managerProfitField" GridPane.rowIndex="3" />
+                                    <Label text="Selected manager turnover" GridPane.rowIndex="4" GridPane.valignment="BOTTOM" />
+                                    <TextField fx:id="managerTurnoverField" GridPane.rowIndex="5" />
+                                    <Label prefHeight="22.0" prefWidth="76.0" text="Manager ID" GridPane.valignment="BOTTOM" />
+                                    <TextField fx:id="totalProfitField" layoutX="10.0" layoutY="163.0" GridPane.rowIndex="7" />
+                                    <Label layoutX="10.0" layoutY="143.0" text="Total profit" GridPane.rowIndex="6" GridPane.valignment="BOTTOM" />
+                                    <Label layoutX="10.0" layoutY="202.0" text="Total turnover" GridPane.rowIndex="8" GridPane.valignment="BOTTOM" />
+                                    <TextField fx:id="totalTurnoverField" layoutX="10.0" layoutY="238.0" GridPane.rowIndex="9" />
+                                    <Button mnemonicParsing="false" onAction="#setProfitField" text="calculate" GridPane.halignment="CENTER" GridPane.rowIndex="10" GridPane.valignment="BOTTOM" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                  </BorderPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
