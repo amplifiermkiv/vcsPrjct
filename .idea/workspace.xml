@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8a0912bb-2158-4e9a-829c-9aa1822f670f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/EditTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/EditTrip.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/ManagerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/ManagerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/RemoveTrip.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/RemoveTrip.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/TripsAccountment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/lt/vcs/managementprjct/controller/TripsAccountment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,30 +46,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/ManagerController.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+            <state relative-caret-position="408">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/editTrip.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="41" column="52" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/carrierWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="53" column="125" selection-start-line="53" selection-start-column="125" selection-end-line="53" selection-end-column="125" />
+            <state relative-caret-position="374">
+              <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -76,51 +66,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+            <state relative-caret-position="416">
+              <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-              <folding>
-                <element signature="e#600#601#0" expanded="true" />
-                <element signature="e#655#656#0" expanded="true" />
+                <element signature="method#test_selectedManagerProfit#0;class#TripsAccountmentTest#0" />
+                <element signature="method#test_selectedManagerTurnover#0;class#TripsAccountmentTest#0" />
+                <element signature="method#test_loadData#0;class#TripsAccountmentTest#0" />
+                <element signature="method#test_loadManagerList#0;class#TripsAccountmentTest#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTripCarrier.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTrip.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-170">
-              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+            <state relative-caret-position="620">
+              <caret line="203" column="10" selection-start-line="203" selection-start-column="10" selection-end-line="203" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -152,7 +115,6 @@
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/model/Customer.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/ManagerController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/CustomerController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/model/AlertBox.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/services/TripManagementDBConnection.java" />
@@ -160,8 +122,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/newTrip.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/model/Trip.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/model/Carrier.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java" />
-        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/editTripCarrier.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/tripAccountment.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/carrierWindow.fxml" />
@@ -177,9 +137,12 @@
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTrip.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTripCarrier.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/RemoveTrip.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/test/resources/editTrip.fxml" />
+        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java" />
+        <option value="$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java" />
       </list>
     </option>
   </component>
@@ -200,8 +163,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,16 +221,48 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="vcsPrjct" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vcsPrjct" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="vcsPrjct" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vcsPrjct" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vcsPrjct" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vcsPrjct" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="managementprjct" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vcsPrjct" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vcsPrjct" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="managementprjct" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557942703085" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../GeriausiaKlase" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -292,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" folderName="Main">
       <option name="MAIN_CLASS_NAME" value="lt.vcs.managementprjct.Main" />
       <module name="vcsPrjct.main" />
@@ -301,6 +294,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TripsAccountmentTest.test_totalProfit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vcsPrjct.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.vcs.managementprjct.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.vcs.managementprjct.controller" />
+      <option name="MAIN_CLASS_NAME" value="lt.vcs.managementprjct.controller.TripsAccountmentTest" />
+      <option name="METHOD_NAME" value="test_totalProfit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TripsAccountmentTest.test_totalTurnover" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="vcsPrjct.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lt.vcs.managementprjct.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="lt.vcs.managementprjct.controller" />
+      <option name="MAIN_CLASS_NAME" value="lt.vcs.managementprjct.controller.TripsAccountmentTest" />
+      <option name="METHOD_NAME" value="test_totalTurnover" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TripsAccountmentTest.test_totalTurnover" />
+        <item itemvalue="JUnit.TripsAccountmentTest.test_totalProfit" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -337,41 +368,43 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="TripsAccountmentTest_test_totalProfit - 2019.05.17 at 17h 06m 31s.xml">
+      <configuration name="TripsAccountmentTest.test_totalProfit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 17m 35s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 18m 47s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 19m 28s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalProfit - 2019.05.17 at 17h 19m 49s.xml">
+      <configuration name="TripsAccountmentTest.test_totalProfit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalProfit - 2019.05.17 at 17h 22m 05s.xml">
+      <configuration name="TripsAccountmentTest.test_totalProfit" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 22m 14s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 22m 34s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 22m 43s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TripsAccountmentTest_test_totalTurnover - 2019.05.17 at 17h 23m 04s.xml">
+      <configuration name="TripsAccountmentTest.test_totalTurnover" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1609808" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.25135428" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" visible="true" weight="0.25460455" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32936078" />
-      <window_info anchor="bottom" id="Build" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.32995737" />
-      <window_info anchor="right" id="Gradle" order="5" weight="0.32995737" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1609808" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16257995" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -388,7 +421,37 @@
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.25460455" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Build" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32995737" />
+      <window_info anchor="right" id="Gradle" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16257995" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.25135428" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49946696" weight="0.32936078" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5010661" side_tool="true" weight="0.25460455" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.49946696" weight="0.32936078" />
       <window_info anchor="bottom" id="Build" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -481,12 +544,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/tripAccountment.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/loginWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -525,13 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="40" column="58" lean-forward="true" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/CarrierController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="19" column="58" selection-end-line="118" />
         </state>
       </provider>
     </entry>
@@ -684,31 +740,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="45" column="37" lean-forward="true" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/ManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="32" column="57" lean-forward="true" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTripCarrier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="28" column="40" lean-forward="true" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTrip.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        <state relative-caret-position="-1029">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -723,36 +758,64 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/carrierWindow.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
+        <state relative-caret-position="459">
           <caret line="53" column="125" selection-start-line="53" selection-start-column="125" selection-end-line="53" selection-end-column="125" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTripCarrier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="272">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/EditTrip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1012">
+          <caret line="29" column="9" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/CarrierController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="33" column="53" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/ConnectionFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
-          <folding>
-            <element signature="e#600#601#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="408">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/RemoveTripTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="43" column="9" lean-forward="true" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
+        <state relative-caret-position="374">
+          <caret line="34" column="23" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/lt/vcs/managementprjct/controller/TripsAccountmentTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#test_selectedManagerProfit#0;class#TripsAccountmentTest#0" />
+            <element signature="method#test_selectedManagerTurnover#0;class#TripsAccountmentTest#0" />
+            <element signature="method#test_loadData#0;class#TripsAccountmentTest#0" />
+            <element signature="method#test_loadManagerList#0;class#TripsAccountmentTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/vcs/managementprjct/controller/TripsAccountment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="203" column="10" selection-start-line="203" selection-start-column="10" selection-end-line="203" selection-end-column="10" />
         </state>
       </provider>
     </entry>

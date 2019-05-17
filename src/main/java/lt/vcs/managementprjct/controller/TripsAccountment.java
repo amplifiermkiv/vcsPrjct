@@ -20,6 +20,7 @@ import lt.vcs.managementprjct.services.TripManagementDBConnection;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -144,9 +145,9 @@ public class TripsAccountment implements Initializable {
         managerProfitField.setText(String.format("%,.2f", profit));
         double turnover = selectedManagerTurnover(managerID);
         managerTurnoverField.setText(String.format("%,.2f", turnover));
-        double totalProfit = totalProfit();
+        double totalProfit = totalProfit(profitList);
         totalProfitField.setText(String.format("%,.2f", totalProfit));
-        double totalTurnover = totalTurnover();
+        double totalTurnover = totalTurnover(customerPriceList);
         totalTurnoverField.setText(String.format("%,.2f", totalTurnover));
 
     }
@@ -187,17 +188,23 @@ public class TripsAccountment implements Initializable {
         return managerTurnover;
     }
 
-    private double totalProfit() {
-        double profit = 0.0;
-        for (double part : profitList) {
-            profit += part;
+    ArrayList<Double> list1 = new ArrayList<>();
+
+    public double totalProfit(ArrayList profitList) {
+        list1 = profitList;
+        double profit = 0;
+        for (Double part : list1) {
+            profit = profit + part;
         }
         return profit;
     }
 
-    private double totalTurnover() {
+    ArrayList<Double> list2 = new ArrayList<>();
+
+    public double totalTurnover(ArrayList turnoverList) {
+        list2 = customerPriceList;
         double turnover = 0.0;
-        for (double part : customerPriceList) {
+        for (Double part : list2) {
             turnover += part;
         }
         return turnover;

@@ -5,20 +5,22 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    static Connection instance;
-    public static Connection getFactory(String URL) throws SQLException {
+    private static ConnectionFactory INSTANCE = null;
 
-        if (instance == null) {
-            return DriverManager.getConnection("jdbc:sqlite:C://SQL/CargoDB.db");
-            //DriverManager == ConnectionFactory.getFactory
-        } else {
-            return instance;
+    public static ConnectionFactory getInstance() throws SQLException {
+        if (INSTANCE == null) {
+            INSTANCE = new ConnectionFactory();
         }
+        return INSTANCE;
     }
 
-    //unit test use only
+    // unit test use only
     @Deprecated
-    public static void setConnection(Connection connection){
-        ConnectionFactory.instance = connection;
+    public static void setInstance(ConnectionFactory connectionFactory) {
+        ConnectionFactory.INSTANCE = connectionFactory;
+    }
+
+    public Connection getConnection(String url) throws SQLException {
+        return DriverManager.getConnection(url);
     }
 }

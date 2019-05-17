@@ -30,7 +30,7 @@ public class RemoveTripTest {
 
         // mocks
         connection = EasyMock.createMock(Connection.class);
-        ConnectionFactory.setConnection(connection);
+        //ConnectionFactory.getInstance(connection);
 
         // test subject
         removeTrip = new RemoveTrip();
